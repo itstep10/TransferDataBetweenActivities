@@ -13,7 +13,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
 {
     public static final String TAG_MESSAG = "org.itstep.transferdatabetweenactivities.message";
-    private static final String SAVED_MESSAGE = "org.itstep.transferdatabetweenactivities.saved_message";
     private static final String TAG = "DebugMainActivity";
     private static final int ACTIVITY_REQUEST_CODE = 0;
 
