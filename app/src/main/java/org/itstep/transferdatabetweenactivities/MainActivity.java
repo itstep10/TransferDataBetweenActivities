@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra(TAG_MESSAG, "Hi! I came from previe Activity");
                 startActivity(intent);
-                startActivityForResult(intent, ACTIVITY_REQUEST_CODE);
+                //startActivityForResult(intent, ACTIVITY_REQUEST_CODE);
             }
         });
         Log.d(TAG, "onCreate: ");
