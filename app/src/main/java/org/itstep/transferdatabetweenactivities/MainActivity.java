@@ -2,6 +2,7 @@ package org.itstep.transferdatabetweenactivities;
 
 
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,17 +12,21 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
-    public static final String TAG_MESSAG = "org.itstep.transferdatabetweenactivities.MainActivity.message";
-
+    public static final String TAG_MESSAG = "org.itstep.transferdatabetweenactivities.message";
+    private static final String SAVED_MESSAGE = "org.itstep.transferdatabetweenactivities.saved_message";
     private static final String TAG = "DebugMainActivity";
     private static final int ACTIVITY_REQUEST_CODE = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        if(savedInstanceState != null && savedInstanceState.containsKey(SAVED_MESSAGE))
+//        {
+//            String message = String.format("%s from onCreate", savedInstanceState.getString(SAVED_MESSAGE));
+//            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+//        }
         Button button = findViewById(R.id.b_go_to_next_activity);
         button.setOnClickListener(new View.OnClickListener()
         {
@@ -36,6 +41,24 @@ public class MainActivity extends AppCompatActivity
         });
         Log.d(TAG, "onCreate: ");
     }
+
+//    @Override
+//    protected void onRestoreInstanceState(Bundle savedInstanceState)
+//    {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        if(savedInstanceState != null && savedInstanceState.containsKey(SAVED_MESSAGE))
+//        {
+//            String message = String.format("%s from onRestoreInstanceState", savedInstanceState.getString(SAVED_MESSAGE));
+//            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+//        }
+//    }
+
+//    @Override
+//    public void onSaveInstanceState(Bundle outState)
+//    {
+//        super.onSaveInstanceState(outState);
+//        outState.putString(SAVED_MESSAGE, "I'm Alive");
+//    }
 
     @Override
     protected void onResume()

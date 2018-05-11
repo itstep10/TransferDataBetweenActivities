@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity
 {
-    public static final String MESSAGE_RESULT = "org.itstep.transferdatabetweenactivities.SecondActivity.message_result";
+    public static final String MESSAGE_RESULT = "org.itstep.transferdatabetweenactivities.message_result";
     private static final String TAG = "DebugSecondActivity";
 
     @Override
@@ -24,7 +24,6 @@ public class SecondActivity extends AppCompatActivity
             if(intent.hasExtra(MainActivity.TAG_MESSAG))
                 message = intent.getStringExtra(MainActivity.TAG_MESSAG);
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-            finish();
         }
 
         setContentView(R.layout.activity_second);
